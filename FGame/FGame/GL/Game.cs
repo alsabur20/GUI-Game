@@ -31,7 +31,7 @@ namespace FGame.GL
             Canon = new LeftCanon(FGame.Properties.Resources.leftCanon, Grid.getCell(03, 2));
             CFires = new List<Fire>();
             Snakes = new List<Snake>();
-            printMaze(Grid);
+            PrintMaze(Grid);
         }
         public void RemoveFire()
         {
@@ -39,7 +39,7 @@ namespace FGame.GL
             {
                 if (cFires[i].X)
                 {
-                    CFires[i].CurrentCell.setGameObject(getBlankGameObject());
+                    CFires[i].CurrentCell.SetGameObject(GetBlankGameObject());
                     cFires.Remove(cFires[i]);
                 }
             }
@@ -50,36 +50,36 @@ namespace FGame.GL
             {
                 if (Snakes[i].X)
                 {
-                    Snakes[i].CurrentCell.setGameObject(getBlankGameObject());
+                    Snakes[i].CurrentCell.SetGameObject(GetBlankGameObject());
                     Snakes.Remove(Snakes[i]);
                 }
             }
         }
-        public int getHealth()
+        public int GetHealth()
         {
             return ninja.Health;
         }
-        public GameCell getCell(int x, int y)
+        public GameCell GetCell(int x, int y)
         {
             return Grid.getCell(x, y);
         }
-        public Ninja getNinja()
+        public Ninja GetNinja()
         {
             return this.ninja;
         }
-        public void addCanonFire(Fire f)
+        public void AddCanonFire(Fire f)
         {
             CFires.Add(f);
         }
-        public void addSnake(Snake s)
+        public void AddSnake(Snake s)
         {
             Snakes.Add(s);
         }
-        public void decreaseHealth()
+        public void DecreaseHealth()
         {
             ninja.Health -= 5;
         }
-        void printMaze(GameGrid grid)
+        void PrintMaze(GameGrid grid)
         {
             for (int x = 0; x < grid.Rows; x++)
             {
@@ -93,14 +93,14 @@ namespace FGame.GL
             }
         }
 
-        public static GameObject getBlankGameObject()
+        public static GameObject GetBlankGameObject()
         {
             GameObject blankGameObject = new GameObject(GameObjectType.NONE, FGame.Properties.Resources.none);
             return blankGameObject;
         }
 
 
-        public static Image getGameObjectImage(char displayCharacter)
+        public static Image GetGameObjectImage(char displayCharacter)
         {
             Image img = FGame.Properties.Resources.none;
             if (displayCharacter == '|')

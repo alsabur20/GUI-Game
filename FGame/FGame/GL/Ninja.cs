@@ -17,7 +17,7 @@ namespace FGame.GL
 
         public int Health { get => health; set => health = value; }
 
-        public void move(GameCell gameCell)
+        public void Move(GameCell gameCell)
         {
             CurrentCell = gameCell;
         }

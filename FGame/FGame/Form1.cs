@@ -23,9 +23,9 @@ namespace FGame
             game = new Game(this);
             collider = new GameCollisionDetector();
         }
-        private void showHealth()
+        private void ShowHealth()
         {
-            health.Text = game.getHealth().ToString();
+            health.Text = game.GetHealth().ToString();
         }
         private void timer1_Tick(object sender, EventArgs e)
         {
@@ -33,13 +33,13 @@ namespace FGame
             game.RemoveSnakes();
             TakeKeyInput();
             MoveNinja();
-            moveFire();
-            moveSnake();
-            showHealth();
+            MoveFire();
+            MoveSnake();
+            ShowHealth();
         }
         private void TakeKeyInput()
         {
-            Ninja ninja = game.getNinja();
+            Ninja ninja = game.GetNinja();
             LeftCanon canon = game.Canon;
             GameCell potentialNewCell = ninja.CurrentCell;
             if (Keyboard.IsKeyPressed(Key.LeftArrow))
@@ -52,11 +52,11 @@ namespace FGame
             }
             if (Keyboard.IsKeyPressed(Key.UpArrow))
             {
-                potentialNewCell = ninja.CurrentCell.nextCell(GameDirection.UP);
+                potentialNewCell = ninja.CurrentCell.NextCell(GameDirection.UP);
             }
             if (Keyboard.IsKeyPressed(Key.DownArrow))
             {
-                potentialNewCell = ninja.CurrentCell.nextCell(GameDirection.DOWN);
+                potentialNewCell = ninja.CurrentCell.NextCell(GameDirection.DOWN);
             }
             if (Keyboard.IsKeyPressed(Key.Space))
             {
@@ -65,26 +65,26 @@ namespace FGame
                  game.addCanonFire(f);*/
 
                 Snake s = new Snake(FGame.Properties.Resources.snake, game.Grid.getCell(3, 26));
-                game.addSnake(s);
+                game.AddSnake(s);
             }
             GameCell currentCell = ninja.CurrentCell;
-            currentCell.setGameObject(Game.getBlankGameObject());
-            ninja.move(potentialNewCell);
+            currentCell.SetGameObject(Game.GetBlankGameObject());
+            ninja.Move(potentialNewCell);
         }
 
         private void MoveNinja()
         {
-            Ninja ninja = game.getNinja();
+            Ninja ninja = game.GetNinja();
             GameCell potentialNewCell = ninja.CurrentCell;
             GameCell nextCell;
             if (moveStatus == 'l')
             {
-                nextCell = ninja.CurrentCell.nextCell(GameDirection.LEFT);
+                nextCell = ninja.CurrentCell.NextCell(GameDirection.LEFT);
                 if (nextCell != potentialNewCell)
                 {
                     GameCell currentCell = ninja.CurrentCell;
-                    currentCell.setGameObject(Game.getBlankGameObject());
-                    ninja.move(nextCell);
+                    currentCell.SetGameObject(Game.GetBlankGameObject());
+                    ninja.Move(nextCell);
                 }
                 else
                 {
@@ -93,12 +93,12 @@ namespace FGame
             }
             if (moveStatus == 'r')
             {
-                nextCell = ninja.CurrentCell.nextCell(GameDirection.RIGHT);
+                nextCell = ninja.CurrentCell.NextCell(GameDirection.RIGHT);
                 if (nextCell != potentialNewCell)
                 {
                     GameCell currentCell = ninja.CurrentCell;
-                    currentCell.setGameObject(Game.getBlankGameObject());
-                    ninja.move(nextCell);
+                    currentCell.SetGameObject(Game.GetBlankGameObject());
+                    ninja.Move(nextCell);
                 }
                 else
                 {
@@ -106,26 +106,26 @@ namespace FGame
                 }
             }
         }
-        private void moveSnake()
+        private void MoveSnake()
         {
             foreach (Snake s in game.Snakes)
             {
-                if (collider.snakeWithNinja(s))
+                if (collider.SnakeWithNinja(s))
                 {
-                    game.decreaseHealth();
+                    game.DecreaseHealth();
                 }
-                s.move(s.nextCell());
+                s.Move(s.NextCell());
             }
         }
-        private void moveFire()
+        private void MoveFire()
         {
             foreach (Fire f in game.CFires)
             {
-                if (collider.fireWithNinja(f))
+                if (collider.FireWithNinja(f))
                 {
-                    game.decreaseHealth();
+                    game.DecreaseHealth();
                 }
-                f.move(f.nextCell());
+                f.Move(f.NextCell());
             }
         }
     }

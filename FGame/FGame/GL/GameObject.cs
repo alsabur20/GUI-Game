@@ -44,7 +44,7 @@ namespace FGame.GL
             get => currentCell; 
             set  { 
                 currentCell = value;
-                currentCell.setGameObject(this);
+                currentCell.SetGameObject(this);
             }
         }
 

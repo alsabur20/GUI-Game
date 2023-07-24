@@ -8,7 +8,7 @@ namespace FGame.GL
 {
     public class GameCollisionDetector
     {
-        public bool fireWithNinja(Fire f)
+        public bool FireWithNinja(Fire f)
         {
             bool flag = false;
             //Write your Code Here
@@ -19,7 +19,7 @@ namespace FGame.GL
             }
             return flag;
         }
-        public bool snakeWithNinja(Snake snake)
+        public bool SnakeWithNinja(Snake snake)
         {
             bool flag = false;
             //Write your Code Here

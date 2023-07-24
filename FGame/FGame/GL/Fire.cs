@@ -19,21 +19,20 @@ namespace FGame.GL
 
         public bool X { get => x; set => x = value; }
 
-        public void move(GameCell gameCell)
+        public void Move(GameCell gameCell)
         {
             if (this.CurrentCell != null)
             {
-                this.CurrentCell.setGameObject(Game.getBlankGameObject());
-
+                this.CurrentCell.SetGameObject(Game.GetBlankGameObject());
             }
             CurrentCell = gameCell;
         }
-        public GameCell nextCell()
+        public GameCell NextCell()
         {
 
             GameCell currentCell = this.CurrentCell;
 
-            GameCell nextCell = this.CurrentCell.nextCell(dir);
+            GameCell nextCell = this.CurrentCell.NextCell(dir);
 
             if (nextCell == currentCell)
             {

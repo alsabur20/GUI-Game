@@ -25,13 +25,13 @@ namespace FGame.GL
             pictureBox.BackColor = Color.Transparent;
             this.Grid = grid;
         }
-        public void setGameObject(GameObject gameObject)
+        public void SetGameObject(GameObject gameObject)
         {
             currentGameObject = gameObject;
             pictureBox.Image = gameObject.Image;
 
         }
-        public GameCell nextCell(GameDirection direction)
+        public GameCell NextCell(GameDirection direction)
         {
 
             if (direction == GameDirection.LEFT)

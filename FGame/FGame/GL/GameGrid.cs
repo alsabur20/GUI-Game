@@ -36,9 +36,9 @@ namespace FGame.GL
                     GameCell cell = new GameCell(row,col,this);
                     char displayCharacter = record[col];
                     GameObjectType type = GameObject.getGameObjectType(displayCharacter);
-                    Image displayIamge = Game.getGameObjectImage(displayCharacter);
+                    Image displayIamge = Game.GetGameObjectImage(displayCharacter);
                     GameObject gameObject = new GameObject(type, displayIamge);
-                    cell.setGameObject(gameObject);
+                    cell.SetGameObject(gameObject);
                     cells[row, col] = cell;
                 }
             }
