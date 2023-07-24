@@ -1,0 +1,14 @@
+D:\Game\FGame\FGame\bin\Debug\FGame.exe.config
+D:\Game\FGame\FGame\bin\Debug\FGame.exe
+D:\Game\FGame\FGame\bin\Debug\FGame.pdb
+D:\Game\FGame\FGame\obj\Debug\FGame.csproj.AssemblyReference.cache
+D:\Game\FGame\FGame\obj\Debug\FGame.csproj.SuggestedBindingRedirects.cache
+D:\Game\FGame\FGame\obj\Debug\FGame.Properties.Resources.resources
+D:\Game\FGame\FGame\obj\Debug\FGame.csproj.GenerateResource.cache
+D:\Game\FGame\FGame\obj\Debug\FGame.csproj.CoreCompileInputs.cache
+D:\Game\FGame\FGame\obj\Debug\FGame.exe
+D:\Game\FGame\FGame\obj\Debug\FGame.pdb
+D:\Game\FGame\FGame\obj\Debug\FGame.Form1.resources
+D:\Game\FGame\FGame\bin\Debug\EZInput.dll
+D:\Game\FGame\FGame\bin\Debug\EZInput.xml
+D:\Game\FGame\FGame\obj\Debug\FGame.csproj.CopyComplete
