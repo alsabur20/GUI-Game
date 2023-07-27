@@ -11,6 +11,7 @@ namespace FGame.GL
 {
     public class GameObject
     {
+        bool isPresent = false;
         char displayCharacter;
         GameObjectType gameObjectType;
         GameCell currentCell;
@@ -18,7 +19,7 @@ namespace FGame.GL
         public GameObject(GameObjectType type, Image image)
         {
             this.gameObjectType = type;
-            this.Image = image; 
+            this.Image = image;
         }
         public GameObject(GameObjectType type, char displayCharacter)
         {
@@ -26,9 +27,11 @@ namespace FGame.GL
             this.displayCharacter = displayCharacter;
         }
 
-        public static GameObjectType getGameObjectType(char displayCharacter) { 
+        public static GameObjectType getGameObjectType(char displayCharacter)
+        {
 
-            if (displayCharacter == '|' || displayCharacter == '_') {
+            if (displayCharacter == '|' || displayCharacter == '_')
+            {
                 return GameObjectType.WALL;
             }
 
@@ -40,14 +43,17 @@ namespace FGame.GL
         }
         public char DisplayCharacter { get => displayCharacter; set => displayCharacter = value; }
         public GameObjectType GameObjectType { get => gameObjectType; set => gameObjectType = value; }
-        public GameCell CurrentCell { 
-            get => currentCell; 
-            set  { 
+        public GameCell CurrentCell
+        {
+            get => currentCell;
+            set
+            {
                 currentCell = value;
                 currentCell.SetGameObject(this);
             }
         }
 
         public Image Image { get => image; set => image = value; }
+        public bool IsPresent { get => isPresent; set => isPresent = value; }
     }
 }

@@ -1,15 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Drawing;
 using System.Linq;
+using System.Drawing;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace FGame.GL
 {
-    public class LeftCanon : GameObject
+    public class RightCanon : GameObject
     {
-        public LeftCanon(Image img, GameCell startCell) : base(GameObjectType.CANON, img)
+        public RightCanon(Image img, GameCell startCell) : base(GameObjectType.CANON, img)
         {
             this.CurrentCell = startCell;
         }

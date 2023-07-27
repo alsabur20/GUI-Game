@@ -7,14 +7,15 @@ using System.Threading.Tasks;
 
 namespace FGame.GL
 {
-    public class Fire : GameObject
+    public class MovingObject : GameObject
     {
-        GameDirection dir = GameDirection.DOWN;
+        GameDirection dir;
         bool x = false;
 
-        public Fire(Image image, GameCell startCell) : base(GameObjectType.FIRE, image)
+        public MovingObject(Image image, GameCell startCell, GameDirection dir) : base(GameObjectType.FIRE, image)
         {
             base.CurrentCell = startCell;
+            this.dir = dir;
         }
 
         public bool X { get => x; set => x = value; }

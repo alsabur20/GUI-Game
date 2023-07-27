@@ -1,17 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Drawing;
+using System.Text;
 using System.Threading.Tasks;
-using System.ComponentModel;
 
 namespace FGame.GL
 {
-    public class LeftArcher : GameObject
+    public class RightArcher : GameObject
     {
         private int health = 100;
-        public LeftArcher(Image img, GameCell startCell) : base(GameObjectType.ARCHER, img)
+        public RightArcher(Image img, GameCell startCell) : base(GameObjectType.ARCHER, img)
         {
             this.CurrentCell = startCell;
         }

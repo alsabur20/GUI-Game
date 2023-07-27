@@ -12,3 +12,4 @@ D:\Game\FGame\FGame\obj\Debug\FGame.Form1.resources
 D:\Game\FGame\FGame\bin\Debug\EZInput.dll
 D:\Game\FGame\FGame\bin\Debug\EZInput.xml
 D:\Game\FGame\FGame\obj\Debug\FGame.csproj.CopyComplete
+D:\Game\FGame\FGame\obj\Debug\FGame.StartForm.resources

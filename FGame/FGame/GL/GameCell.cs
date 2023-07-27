@@ -39,7 +39,7 @@ namespace FGame.GL
                 if (this.col > 0)
                 {
                     GameCell ncell = Grid.getCell(row, col - 1);
-                    if (ncell.CurrentGameObject.GameObjectType == GameObjectType.NONE || ncell.CurrentGameObject.GameObjectType == GameObjectType.PLAYER)
+                    if (ncell.CurrentGameObject.GameObjectType != 0)
                     {
                         return ncell;
                     }
@@ -51,7 +51,7 @@ namespace FGame.GL
                 if (this.col < Grid.Cols - 1)
                 {
                     GameCell ncell = Grid.getCell(this.row, this.col + 1);
-                    if (ncell.CurrentGameObject.GameObjectType == GameObjectType.NONE || ncell.CurrentGameObject.GameObjectType == GameObjectType.PLAYER)
+                    if (ncell.CurrentGameObject.GameObjectType != 0)
                     {
                         return ncell;
                     }
@@ -63,7 +63,7 @@ namespace FGame.GL
                 if (this.row > 0)
                 {
                     GameCell ncell = Grid.getCell(this.row - 1, this.col);
-                    if (ncell.CurrentGameObject.GameObjectType == GameObjectType.NONE || ncell.CurrentGameObject.GameObjectType == GameObjectType.PLAYER)
+                    if (ncell.CurrentGameObject.GameObjectType != 0)
                     {
                         return ncell;
                     }
@@ -75,7 +75,7 @@ namespace FGame.GL
                 if (this.row < Grid.Rows - 1)
                 {
                     GameCell ncell = Grid.getCell(this.row + 1, this.col);
-                    if (ncell.CurrentGameObject.GameObjectType == GameObjectType.NONE|| ncell.CurrentGameObject.GameObjectType == GameObjectType.PLAYER)
+                    if (ncell.CurrentGameObject.GameObjectType != 0)
                     {
                         return ncell;
                     }

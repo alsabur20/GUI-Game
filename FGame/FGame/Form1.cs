@@ -15,6 +15,7 @@ namespace FGame
     public partial class Form1 : Form
     {
         Game game;
+        Random enemy = new Random();
         GameCollisionDetector collider;
         char moveStatus = 's';
         public Form1()
@@ -25,30 +26,168 @@ namespace FGame
         }
         private void ShowHealth()
         {
-            health.Text = game.GetHealth().ToString();
+            ninjaHealth.Text = game.GetHealth().ToString();
+            archerHealth.Text = game.ArcherHealth().ToString();
+            canonHealth.Text = game.CanonHealth().ToString();
+            snakeHealth.Text = game.SnakeHealth().ToString();
+            score.Text = game.Score.ToString();
+        }
+        protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
+        {
+            return true;
         }
         private void timer1_Tick(object sender, EventArgs e)
         {
+            int i = enemy.Next(0, 100);
+            GenerateEnemy(i);
+            ShowHealth();
+            game.RemoveCoin();
             game.RemoveFire();
             game.RemoveSnakes();
             TakeKeyInput();
             MoveNinja();
             MoveFire();
+            MoveCoins();
             MoveSnake();
-            ShowHealth();
+            if (game.Score == 500)
+            {
+                timer1.Enabled = false;
+                this.Hide();
+                MessageBox.Show("Congratulations 🥳 !!!! You have won the game.");
+                Application.Exit();
+            }
+            if (game.GetHealth() == 0)
+            {
+                timer1.Enabled = false;
+                this.Hide();
+                MessageBox.Show("OOPS 🥺 !!! You lost the game.");
+                Application.Exit();
+            }
+        }
+        private void GenerateEnemy(int i)
+        {
+            if (i == 30 && game.RightCanon == null && game.ArcherHealth() > 0)
+            {
+                game.RightArcher = game.GenerateRightArcher();
+            }
+            else if (i == 40 && game.LeftArcher == null && game.CanonHealth() > 0)
+            {
+                game.LeftCanon = game.GenerateLeftCanon();
+            }
+            else if (i == 20 && game.SnakeHealth() > 0)
+            {
+                if (game.LeftCanon == null && game.LeftArcher == null)
+                    game.GenerateLeftSnake();
+            }
+            else if (i == 50 && game.SnakeHealth() > 0)
+            {
+                if (game.RightCanon == null && game.RightArcher == null)
+                    game.GenerateRightSnake();
+            }
+            else if (i == 70 && game.RightArcher == null && game.CanonHealth() > 0)
+            {
+                game.RightCanon = game.GenerateRightCanon();
+            }
+            else if (i == 80 && game.LeftCanon == null && game.ArcherHealth() > 0)
+            {
+                game.LeftArcher = game.GenerateLeftArcher();
+            }
+            else if (i == 10 && game.RightArcher == null && game.RightCanon == null)
+            {
+                game.GenerateRightCoin();
+            }
+            else if (i == 25 && game.LeftArcher == null && game.LeftCanon == null)
+            {
+                game.GenerateLeftCoin();
+                game.GenerateLeftCoin();
+                game.GenerateLeftCoin();
+            }
+            if (game.RightArcher != null)
+            {
+                if (game.RightArcher.IsPresent)
+                {
+                    int j = enemy.Next(0, 100);
+                    if (j == 10 || j == 50 || j == 100)
+                    {
+                        game.GenerateRightArrow();
+                    }
+                    if (j == 70)
+                    {
+                        game.RightArcher.IsPresent = false;
+                        GameCell c = game.RightArcher.CurrentCell;
+                        game.RightArcher = null;
+                        c.SetGameObject(Game.GetBlankGameObject());
+                    }
+                }
+            }
+            if (game.LeftArcher != null)
+            {
+                if (game.LeftArcher.IsPresent)
+                {
+                    int j = enemy.Next(0, 100);
+                    if (j == 10 || j == 50 || j == 100)
+                    {
+                        game.GenerateLeftArrow();
+                    }
+                    if (j == 70)
+                    {
+                        game.LeftArcher.IsPresent = false;
+                        GameCell c = game.LeftArcher.CurrentCell;
+                        game.LeftArcher = null;
+                        c.SetGameObject(Game.GetBlankGameObject());
+                    }
+                }
+            }
+            if (game.LeftCanon != null)
+            {
+                if (game.LeftCanon.IsPresent)
+                {
+                    int j = enemy.Next(0, 100);
+                    if (j == 10 || j == 50 || j == 100)
+                    {
+                        game.GenerateLeftFire();
+                    }
+                    if (j == 70)
+                    {
+                        game.LeftCanon.IsPresent = false;
+                        GameCell c = game.LeftCanon.CurrentCell;
+                        game.LeftCanon = null;
+                        c.SetGameObject(Game.GetBlankGameObject());
+                    }
+                }
+            }
+            if (game.RightCanon != null)
+            {
+                if (game.RightCanon.IsPresent)
+                {
+                    int j = enemy.Next(0, 100);
+                    if (j == 10 || j == 50 || j == 100)
+                    {
+                        game.GenerateRightFire();
+                    }
+                    if (j == 70)
+                    {
+                        game.RightCanon.IsPresent = false;
+                        GameCell c = game.RightCanon.CurrentCell;
+                        game.RightCanon = null;
+                        c.SetGameObject(Game.GetBlankGameObject());
+                    }
+                }
+            }
         }
         private void TakeKeyInput()
         {
             Ninja ninja = game.GetNinja();
-            LeftCanon canon = game.Canon;
             GameCell potentialNewCell = ninja.CurrentCell;
             if (Keyboard.IsKeyPressed(Key.LeftArrow))
             {
-                moveStatus = 'l';
+                if (moveStatus == 's')
+                    moveStatus = 'l';
             }
             if (Keyboard.IsKeyPressed(Key.RightArrow))
             {
-                moveStatus = 'r';
+                if (moveStatus == 's')
+                    moveStatus = 'r';
             }
             if (Keyboard.IsKeyPressed(Key.UpArrow))
             {
@@ -58,14 +197,14 @@ namespace FGame
             {
                 potentialNewCell = ninja.CurrentCell.NextCell(GameDirection.DOWN);
             }
+            if (Keyboard.IsKeyPressed(Key.A))
+            {   
+            }   
             if (Keyboard.IsKeyPressed(Key.Space))
             {
-                /* GameCell NewCell = canon.CurrentCell.nextCell(GameDirection.DOWN);
-                 Fire f = new Fire(FGame.Properties.Resources.cFire, NewCell);
-                 game.addCanonFire(f);*/
-
-                Snake s = new Snake(FGame.Properties.Resources.snake, game.Grid.getCell(3, 26));
-                game.AddSnake(s);
+                GameCell nCell = ninja.CurrentCell.NextCell(GameDirection.UP);
+                MovingObject f = new MovingObject(FGame.Properties.Resources.blade, nCell, GameDirection.UP);
+                game.AddFire(f);
             }
             GameCell currentCell = ninja.CurrentCell;
             currentCell.SetGameObject(Game.GetBlankGameObject());
@@ -112,21 +251,45 @@ namespace FGame
             {
                 if (collider.SnakeWithNinja(s))
                 {
-                    game.DecreaseHealth();
+                    game.DecreaseNinjaHealth();
                 }
                 s.Move(s.NextCell());
             }
         }
         private void MoveFire()
         {
-            foreach (Fire f in game.CFires)
+            foreach (MovingObject f in game.Fires)
             {
                 if (collider.FireWithNinja(f))
                 {
-                    game.DecreaseHealth();
+                    game.DecreaseNinjaHealth();
+                }
+                if (collider.BladeWithArcher(f))
+                {
+                    game.DecreaseArcherHealth();
+                }
+                if (collider.BladeWithCanon(f))
+                {
+                    game.DecreaseCanonHealth();
+                }
+                if (collider.BladeWithSnake(f))
+                {
+                    game.DecreaseSnakeHealth();
                 }
                 f.Move(f.NextCell());
             }
+        }
+        private void MoveCoins()
+        {
+            foreach (MovingObject c in game.Coins)
+            {
+                if (collider.CoinWithNinja(c))
+                {
+                    game.Score += 5;
+                }
+                c.Move(c.NextCell());
+            }
+
         }
     }
 }

@@ -8,11 +8,55 @@ namespace FGame.GL
 {
     public class GameCollisionDetector
     {
-        public bool FireWithNinja(Fire f)
+        public bool FireWithNinja(MovingObject f)
         {
             bool flag = false;
             //Write your Code Here
-            if (f.CurrentCell.CurrentGameObject.GameObjectType == GameObjectType.PLAYER)
+            if (f.NextCell().CurrentGameObject.GameObjectType == GameObjectType.PLAYER)
+            {
+                flag = true;
+                f.X = true;
+            }
+            return flag;
+        }
+        public bool CoinWithNinja(MovingObject c)
+        {
+            bool flag = false;
+            //Write your Code Here
+            if (c.NextCell().CurrentGameObject.GameObjectType == GameObjectType.PLAYER)
+            {
+                flag = true;
+                c.X = true;
+            }
+            return flag;
+        }
+        public bool BladeWithArcher(MovingObject f)
+        {
+            bool flag = false;
+            //Write your Code Here
+            if (f.NextCell().CurrentGameObject.GameObjectType == GameObjectType.ARCHER)
+            {
+                flag = true;
+                f.X = true;
+            }
+            return flag;
+        }
+        public bool BladeWithCanon(MovingObject f)
+        {
+            bool flag = false;
+            //Write your Code Here
+            if (f.NextCell().CurrentGameObject.GameObjectType == GameObjectType.CANON)
+            {
+                flag = true;
+                f.X = true;
+            }
+            return flag;
+        }
+        public bool BladeWithSnake(MovingObject f)
+        {
+            bool flag = false;
+            //Write your Code Here
+            if (f.NextCell().CurrentGameObject.GameObjectType == GameObjectType.SNAKE)
             {
                 flag = true;
                 f.X = true;
@@ -23,7 +67,7 @@ namespace FGame.GL
         {
             bool flag = false;
             //Write your Code Here
-            if (snake.CurrentCell.CurrentGameObject.GameObjectType == GameObjectType.PLAYER)
+            if (snake.NextCell().CurrentGameObject.GameObjectType == GameObjectType.PLAYER)
             {
                 flag = true;
                 snake.X = true;
