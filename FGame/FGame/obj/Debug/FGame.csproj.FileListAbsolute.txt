@@ -15,3 +15,5 @@ D:\Game\FGame\FGame\obj\Debug\FGame.csproj.CopyComplete
 D:\Game\FGame\FGame\obj\Debug\FGame.StartPage.resources
 D:\Game\FGame\FGame\obj\Debug\FGame.Instructions.resources
 D:\Game\FGame\FGame\obj\Debug\FGame.Story.resources
+D:\Game\FGame\FGame\obj\Debug\FGame.ScoreForm.resources
+D:\Game\FGame\FGame\obj\Debug\FGame.Resume.resources

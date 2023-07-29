@@ -136,7 +136,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "StartPage";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "StartPage";
+            this.Text = " ";
             this.tableLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
 

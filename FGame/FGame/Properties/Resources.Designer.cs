@@ -193,9 +193,29 @@ namespace FGame.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap sNinja {
+            get {
+                object obj = ResourceManager.GetObject("sNinja", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Story {
             get {
                 object obj = ResourceManager.GetObject("Story", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Untitled {
+            get {
+                object obj = ResourceManager.GetObject("Untitled", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

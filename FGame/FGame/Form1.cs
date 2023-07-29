@@ -57,15 +57,15 @@ namespace FGame
             {
                 timer1.Enabled = false;
                 this.Hide();
-                MessageBox.Show("Congratulations 🥳 !!!! You have won the game.");
-                Application.Exit();
+                ScoreForm s = new ScoreForm(game.Score);
+                s.Show();
             }
             if (game.GetHealth() == 0)
             {
                 timer1.Enabled = false;
                 this.Hide();
-                MessageBox.Show("OOPS 🥺 !!! You lost the game.");
-                Application.Exit();
+                ScoreForm s = new ScoreForm(game.Score);
+                s.Show();
             }
         }
         private void GenerateEnemy(int i)
@@ -204,6 +204,8 @@ namespace FGame
             }
             if (Keyboard.IsKeyPressed(Key.A))
             {
+                //game.Score = 500;
+                game.Ninja.Health = 0;
             }
             if (Keyboard.IsKeyPressed(Key.Space))
             {
@@ -300,6 +302,23 @@ namespace FGame
         private void Form1_FormClosed(object sender, FormClosedEventArgs e)
         {
             Application.Exit();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            timer1.Stop();
+            Resume r = new Resume(this);
+            r.Show();
+        }
+
+        private void Form1_Enter(object sender, EventArgs e)
+        {
+            timer1.Start();
+        }
+
+        private void Form1_Activated(object sender, EventArgs e)
+        {
+            timer1.Start();
         }
     }
 }
