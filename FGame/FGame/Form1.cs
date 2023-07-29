@@ -27,9 +27,13 @@ namespace FGame
         private void ShowHealth()
         {
             ninjaHealth.Text = game.GetHealth().ToString();
+            progressBar1.Value = game.GetHealth();
             archerHealth.Text = game.ArcherHealth().ToString();
+            progressBar2.Value = game.ArcherHealth();
             canonHealth.Text = game.CanonHealth().ToString();
+            progressBar3.Value = game.CanonHealth();
             snakeHealth.Text = game.SnakeHealth().ToString();
+            progressBar4.Value = game.SnakeHealth();
             score.Text = game.Score.ToString();
         }
         protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
@@ -118,6 +122,7 @@ namespace FGame
                         game.RightArcher = null;
                         c.SetGameObject(Game.GetBlankGameObject());
                     }
+
                 }
             }
             if (game.LeftArcher != null)
@@ -198,8 +203,8 @@ namespace FGame
                 potentialNewCell = ninja.CurrentCell.NextCell(GameDirection.DOWN);
             }
             if (Keyboard.IsKeyPressed(Key.A))
-            {   
-            }   
+            {
+            }
             if (Keyboard.IsKeyPressed(Key.Space))
             {
                 GameCell nCell = ninja.CurrentCell.NextCell(GameDirection.UP);
@@ -290,6 +295,11 @@ namespace FGame
                 c.Move(c.NextCell());
             }
 
+        }
+
+        private void Form1_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

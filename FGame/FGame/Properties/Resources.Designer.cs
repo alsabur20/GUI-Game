@@ -133,6 +133,16 @@ namespace FGame.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap instructions {
+            get {
+                object obj = ResourceManager.GetObject("instructions", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap leftCanon {
             get {
                 object obj = ResourceManager.GetObject("leftCanon", resourceCulture);
@@ -176,6 +186,16 @@ namespace FGame.Properties {
         internal static System.Drawing.Bitmap snake {
             get {
                 object obj = ResourceManager.GetObject("snake", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Story {
+            get {
+                object obj = ResourceManager.GetObject("Story", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -16,7 +16,7 @@ namespace FGame
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Ninjump());
+            Application.Run(new StartPage());
         }
     }
 }
