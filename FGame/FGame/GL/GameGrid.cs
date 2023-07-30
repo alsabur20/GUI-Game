@@ -41,13 +41,8 @@ namespace FGame.GL
                     cell.SetGameObject(gameObject);
                     cells[row, col] = cell;
                 }
-            }
-           
+            }           
             fp.Close();
-        }
-
-            
-    
-   
+        }  
     }
 }

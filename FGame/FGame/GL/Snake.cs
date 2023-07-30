@@ -22,17 +22,13 @@ namespace FGame.GL
             if (this.CurrentCell != null)
             {
                 this.CurrentCell.SetGameObject(Game.GetBlankGameObject());
-
             }
             CurrentCell = gameCell;
         }
         public GameCell NextCell()
         {
-
             GameCell currentCell = this.CurrentCell;
-
             GameCell nextCell = this.CurrentCell.NextCell(dir);
-
             if (nextCell == currentCell)
             {
                 x = true;
@@ -42,7 +38,6 @@ namespace FGame.GL
                 currentCell = nextCell;
             }
             return currentCell;
-
         }
     }
 }

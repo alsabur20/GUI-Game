@@ -34,11 +34,6 @@ namespace FGame.GL
             {
                 return GameObjectType.WALL;
             }
-
-            /*if (displayCharacter == '.') {
-                return GameObjectType.REWARD;
-            }*/
-
             return GameObjectType.NONE;
         }
         public char DisplayCharacter { get => displayCharacter; set => displayCharacter = value; }

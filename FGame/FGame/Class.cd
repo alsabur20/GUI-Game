@@ -1,0 +1,144 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="FGame.GL.Game" Collapsed="true">
+    <Position X="9.75" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>RAJAAgACLAKAACoJoEAKGRABCwCIAgBIiMIAwCTAEKA=</HashCode>
+      <FileName>GL\Game.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FGame.GL.GameCell" Collapsed="true">
+    <Position X="9.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAgAAAAIAAAQAQAAAAwACACIAAAAgAAAAwAAAYAA=</HashCode>
+      <FileName>GL\GameCell.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FGame.GL.GameCollisionDetector" Collapsed="true">
+    <Position X="17.75" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAACAAAAAAAQAACAAQAAACIAAA=</HashCode>
+      <FileName>GL\GameCollisionDetector.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FGame.GL.GameGrid" Collapsed="true">
+    <Position X="9.75" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAAAAAAEIAAABAAIACAACAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>GL\GameGrid.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FGame.GL.GameObject" Collapsed="true">
+    <Position X="9.75" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAEAAAgBAAAAABAAAAEgAAQBAAAEAAEAAAABA=</HashCode>
+      <FileName>GL\GameObject.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FGame.GL.LeftArcher" Collapsed="true">
+    <Position X="14.25" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAg=</HashCode>
+      <FileName>GL\LeftArcher.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FGame.GL.LeftCanon" Collapsed="true">
+    <Position X="14.25" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>GL\LeftCanon.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FGame.GL.MovingObject" Collapsed="true">
+    <Position X="14.25" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAKAAAAAAAAAAAAAAAAAAAAAAAABAQAAAQAA=</HashCode>
+      <FileName>GL\MovingObject.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FGame.GL.Ninja" Collapsed="true">
+    <Position X="14.25" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAACAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAg=</HashCode>
+      <FileName>GL\Ninja.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FGame.GL.RightArcher" Collapsed="true">
+    <Position X="14.25" Y="8" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAg=</HashCode>
+      <FileName>GL\RightArcher.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FGame.GL.RightCanon" Collapsed="true">
+    <Position X="14.25" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>GL\RightCanon.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FGame.GL.Snake" Collapsed="true">
+    <Position X="14.25" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAKAAAAAAAAAAAAAAAAAAAAAAAABAQAAAQAA=</HashCode>
+      <FileName>GL\Snake.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FGame.Form1" Collapsed="true">
+    <Position X="7.5" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQQAAAASgDQAABAAAAiIAAACAgQMIAAIgEAAEASCECI=</HashCode>
+      <FileName>UI\Form1.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FGame.Instructions" Collapsed="true">
+    <Position X="1.25" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAAACAAAACAAAIAAAAAEAAAAAAAAA=</HashCode>
+      <FileName>UI\Instructions.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FGame.Resume" Collapsed="true">
+    <Position X="5.25" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAAACAAAACAAAYAAAQAGAAAQBAAAA=</HashCode>
+      <FileName>UI\Resume.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FGame.ScoreForm" Collapsed="true">
+    <Position X="5.25" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAABAAAACIAIACAAEYAgAAAGAAAQBACAA=</HashCode>
+      <FileName>UI\ScoreForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FGame.StartPage" Collapsed="true">
+    <Position X="3.5" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAAACAAAACAEA4AAAAAHAIAAAAACA=</HashCode>
+      <FileName>UI\StartPage.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FGame.Story" Collapsed="true">
+    <Position X="1.25" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAAACAAAACAAAIAAAAAEAAAAAAAAA=</HashCode>
+      <FileName>UI\Story.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Enum Name="FGame.GL.GameDirection" Collapsed="true">
+    <Position X="17.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAgAAAAAAAAAAAAICAAAgAAAAAAAAAAA=</HashCode>
+      <FileName>GL\GameDirection.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="FGame.GL.GameObjectType" Collapsed="true">
+    <Position X="7.5" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAUAAAAAAQAACAhAAAAAAAAAAAABQAABAAA=</HashCode>
+      <FileName>GL\GameObjectType.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

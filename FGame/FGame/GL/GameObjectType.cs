@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace FGame.GL
 {
-   public enum GameObjectType
+    public enum GameObjectType
     {
         WALL,
         PLAYER,

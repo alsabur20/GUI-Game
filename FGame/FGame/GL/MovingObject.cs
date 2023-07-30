@@ -11,13 +11,11 @@ namespace FGame.GL
     {
         GameDirection dir;
         bool x = false;
-
         public MovingObject(Image image, GameCell startCell, GameDirection dir) : base(GameObjectType.FIRE, image)
         {
             base.CurrentCell = startCell;
             this.dir = dir;
         }
-
         public bool X { get => x; set => x = value; }
 
         public void Move(GameCell gameCell)
@@ -44,7 +42,6 @@ namespace FGame.GL
                 currentCell = nextCell;
             }
             return currentCell;
-
         }
     }
 }

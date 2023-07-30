@@ -204,8 +204,8 @@ namespace FGame
             }
             if (Keyboard.IsKeyPressed(Key.A))
             {
-                //game.Score = 500;
-                game.Ninja.Health = 0;
+                game.Score = 500;
+                //game.Ninja.Health = 0;
             }
             if (Keyboard.IsKeyPressed(Key.Space))
             {
